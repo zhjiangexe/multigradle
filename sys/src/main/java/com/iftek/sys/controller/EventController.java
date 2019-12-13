@@ -1,4 +1,4 @@
-package com.iftek.axe;
+package com.iftek.sys.controller;
 
 import com.iftek.atom.entity.Event;
 import com.iftek.core.EventService;
@@ -8,12 +8,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class EventController {
-    @Autowired
-    private EventService eventService;
+  @Autowired
+  private EventService eventService;
 
-    @GetMapping("/")
-    public String getByName(String paramName){
-        Event event = eventService.getByName(paramName);
-        return event.getName();
-    }
+  @GetMapping("/")
+  public Event query() {
+    Event event = eventService.getByName("");
+    return event;
+  }
+
 }
